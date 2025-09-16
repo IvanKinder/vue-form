@@ -14,6 +14,9 @@
       :updateUser="updateUser"
       :deleteUser="deleteUser"
     />
+    <v-snackbar v-model="showSnackbar" :timeout="1000">
+      <span>Сохранено</span>
+    </v-snackbar>
   </v-container>
 </template>
 
@@ -24,10 +27,12 @@ import { storeToRefs } from "pinia";
 
 const userStore = useUsersStore();
 const { updateUser, deleteUser } = userStore;
-const { users } = storeToRefs(userStore);
+const { users, showSnackbar } = storeToRefs(userStore);
 </script>
+
 <style scoped>
 .content {
   height: 500px;
   overflow: auto;
-}</style>
+}
+</style>

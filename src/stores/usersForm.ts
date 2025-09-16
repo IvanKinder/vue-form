@@ -36,9 +36,15 @@ const savedUsers = savedData ? JSON.parse(savedData) : null;
 
 export const useUsersStore = defineStore("users", () => {
   const users = ref<IUser[]>(savedUsers || [initialUserValue]);
+  const showSnackbar = ref(false);
+
+  const toggleNotify = () => {
+    showSnackbar.value = true;
+  };
 
   const saveData = () => {
     localStorage.setItem("awesomeUsers", JSON.stringify(users.value));
+    toggleNotify();
   };
 
   const addUser = () => {
@@ -62,5 +68,6 @@ export const useUsersStore = defineStore("users", () => {
     addUser,
     updateUser,
     deleteUser,
+    showSnackbar,
   };
 });

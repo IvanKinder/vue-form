@@ -11,6 +11,7 @@
 <style scoped>
 .tooltip-block {
   display: flex;
+  gap: 5px;
   align-items: center;
   background: rgb(233, 234, 243);
   padding: 3px 6px;
