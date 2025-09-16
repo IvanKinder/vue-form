@@ -1,4 +1,5 @@
 To run this project use command:
+  - npm i
   - npm run dev
 # Vue 3 + TypeScript + Vite
 
